@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AEAA,AACI,SADK,CACL,EAAE,CAAA;EACE,UAAU,EAAE,MAAM;CACrB",
+    "sources": [
+        "style.scss",
+        "components/_globals.scss",
+        "pages/_homepage.scss",
+        "pages/_citypage.scss",
+        "pages/_filterpage.scss",
+        "pages/resultspage.scss",
+        "components/_resultscard.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

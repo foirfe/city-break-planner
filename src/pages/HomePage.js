@@ -40,7 +40,7 @@ export default function HomePage(){
     
    
     return (
-        <div>
+        <div className="homepage">
             <h1>Just another {day} {timeofday} in Denmark.</h1>
         </div>
     )
