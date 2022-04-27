@@ -1,0 +1,43 @@
+.filterpage{
+    background: #095979;
+    h1{
+        .color{
+            color: #FDCB9C;
+        }
+        text-transform: uppercase;
+    }
+    form{
+        color: white;
+        .checkboxes{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+        label{
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 50%;
+            }
+            input[type=checkbox]{
+                display: none;
+            }
+            input:checked + span{
+                color: #A5E9C0;
+                svg path{
+                    stroke: #A5E9C0;
+                    fill: #A5E9C0;
+                }
+            }
+          
+            button{
+                padding: 2%;
+                margin: 0 auto;
+                border: none;
+                font-weight: bold;
+                background-color: #EA4242;
+                color: white;
+                text-transform: uppercase;
+            }
+        }
+        
+    }
