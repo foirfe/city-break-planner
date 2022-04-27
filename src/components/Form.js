@@ -21,7 +21,7 @@ export default function Form(){
     const [beacheswater, setBeachesandwater] = useState(localStorage.getItem("Beaches and lidos"));
     const [cultureandhistory, setCultureandhistory] = useState(localStorage.getItem("Culture and history"));
     const [nightlifeandclubs, setNightlifeandclubs] = useState(localStorage.getItem("Nightlife and clubs"));
-    const [architectureandurbanspaces, setArchitectureandurbanspaces] = useState(localStorage.getItem("Architexture and urban spaces"));
+    const [architectureandurbanspaces, setArchitectureandurbanspaces] = useState(localStorage.getItem("Architecture and urban spaces"));
     const [food, setFood] = useState(localStorage.getItem("Food"));
     const [sightseeing, setSightseeing] = useState(localStorage.getItem("Sightseeing"));
     const [sportsandactivites, setSportsandactivites] = useState(localStorage.getItem("Sports and activites"));
@@ -30,7 +30,10 @@ export default function Form(){
 
     function handleSubmit(event) {
         event.preventDefault();
-
+    const checked = document.querySelectorAll("input[type=checkbox]:checked").length
+    if(!checked){
+        alert("You must pick at least one category")
+}   else{
         for (const item of event.target.elements) {
             if (item.checked) {
                 localStorage.setItem(item.value, true);
@@ -40,7 +43,7 @@ export default function Form(){
         }
         navigate("/results")
     }
-
+    }
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -50,7 +53,7 @@ export default function Form(){
                     <span><ParksIcon/> Parks &#38; Gardens</span>
                     </label>
                 <label>
-                    <input type="checkbox" value="Museum" onChange={e => setMuseum(e.target.checked)} checked={museum} />
+                    <input type="checkbox" value="Museums" onChange={e => setMuseum(e.target.checked)} checked={museum} />
                    <span> <MuseumIcon/>Museums</span>
                 </label>
                 <label>
