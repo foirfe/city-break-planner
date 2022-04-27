@@ -27,12 +27,13 @@ export default function Form(){
     const [sportsandactivites, setSportsandactivites] = useState(localStorage.getItem("Sports and activites"));
     const [kids, setKids] = useState(localStorage.getItem("Kids"));
     const [zoosandanimals, setZoosandanimals] = useState(localStorage.getItem("Zoos and animals"));
+    const [errormessage, setErrormessage] = useState("");
 
     function handleSubmit(event) {
         event.preventDefault();
     const checked = document.querySelectorAll("input[type=checkbox]:checked").length
     if(!checked){
-        alert("You must pick at least one category")
+       setErrormessage("You must pick one category");
 }   else{
         for (const item of event.target.elements) {
             if (item.checked) {
@@ -98,6 +99,7 @@ export default function Form(){
                 </label>
 </div>
                 <button>Discover Now</button>
+                <p>{errormessage}</p>
             </form>
         </>
     );
