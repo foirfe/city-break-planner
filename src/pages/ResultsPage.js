@@ -5,6 +5,7 @@ export default function ResultsPage(){
 const [places, setPlaces] = useState([]);
 
 useEffect(()=>{
+    //Get Users Current GeoLocation
     async function getCurrentLocation() {
         const location = await new Promise((resolve, reject) => {
           navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -14,6 +15,7 @@ useEffect(()=>{
           latitude: location.coords.latitude,
         };
       };
+      //Function to Calculate distance between two GeoCoordinates
       function calcDistance(lat1, lon1, lat2, lon2, unit = "K") {
         if ((lat1 === lat2) && (lon1 === lon2)) {
           return 0;
@@ -44,23 +46,23 @@ useEffect(()=>{
     const response2 = await fetch("https://raw.githubusercontent.com/cederdorff/react-visit-denmark/master/public/data/placesToEat.json");
     const placesToEat = await response2.json();
     const combineddata = activites.concat(attractions, placesToEat);
-    const filterdata = combineddata.filter(item => item.Address.GeoCoordinate);
-    filterdata.forEach(doc => {
+    //Distance between Users Current Location and Place Location
+    const filterdatawithlocation = combineddata.filter(item => item.Address.GeoCoordinate);
+    filterdatawithlocation.forEach(doc => {
       let location = doc;
       location.distance = calcDistance(currentlocation.latitude, currentlocation.longitude, doc.Address.GeoCoordinate.Latitude, doc.Address.GeoCoordinate.Longitude)
-    });
-    filterdata.sort(function (a, b){
-      return a.distance - b.distance;
     })
-    console.log(combineddata);
-    setPlaces(filterdata);
+    setPlaces(filterdatawithlocation);
+
     }
+   
 getActivites();
 },[]);
 
     return(
         <div className="resultspage">
         <h1>Resultater</h1>
+        <p>Test for sorting</p>
         {places.map(place =>(
             <ResultCard place={place} key={place.Id}/>
         ))}
