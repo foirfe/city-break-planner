@@ -46,7 +46,7 @@ export default function HomePage() {
               </h1>
             </div>
             <div className="btn">
-              <NavLink to="/byer">
+              <NavLink to="/cities">
                 <button type="button">Explore Nu</button>
               </NavLink>
             </div>

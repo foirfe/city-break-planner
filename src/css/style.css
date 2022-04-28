@@ -1,0 +1,94 @@
+html {
+  background: #095979;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.homepage h1 {
+  text-align: right;
+}
+
+.filterpage {
+  background: #095979;
+}
+
+.filterpage h1 {
+  text-transform: uppercase;
+}
+
+.filterpage h1 .color {
+  color: #FDCB9C;
+}
+
+.filterpage form {
+  color: white;
+}
+
+.filterpage form .checkboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.filterpage form label {
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 50%;
+}
+
+.filterpage form input[type=checkbox] {
+  display: none;
+}
+
+.filterpage form input:checked + span {
+  color: #A5E9C0;
+}
+
+.filterpage form input:checked + span svg path {
+  stroke: #A5E9C0;
+  fill: #A5E9C0;
+}
+
+.filterpage form button {
+  padding: 2%;
+  margin: 0 auto;
+  border: none;
+  font-weight: bold;
+  background-color: #EA4242;
+  color: white;
+  text-transform: uppercase;
+}
+
+.resultcard .resultcardimage {
+  text-align: center;
+  position: relative;
+  z-index: -1;
+}
+
+.resultcard h2 {
+  position: absolute;
+}
+
+.resultcard img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 50%;
+  height: 50%;
+}
+/*# sourceMappingURL=style.css.map */
