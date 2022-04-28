@@ -1,5 +1,60 @@
 .homepage {
   h1 {
+    text-align: center;
+  }
+  .banner {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #095979;
+    display: flex;
+    justify-content: center;
+    h1{
+        text-align: left;
+        font-family: "Montserrat";
+        font-size: 45px;
+        margin: 20px;
+        color: #fff;
+        font-weight: 400;
+        span{
+            color: #fee789;
+        }
+    }
+  }
+  .home {
+    height: 95vh;
+    border: 1px solid #fff;
+    position: absolute;
+    top: 20px;
+    width: 90%;
+  }
+  .btn {
+    margin: 20px;
+    margin-top: 50px;
+  }
+  .btn button {
+    font-family: "Montserrat";
+    padding: 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+    background-color: #ea4242;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .logoo {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+  
     text-align: right;
   }
+  
+  .logoo img {
+    width: 50%;
+  }
+  
 }

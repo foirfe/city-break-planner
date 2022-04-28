@@ -31,7 +31,7 @@ export default function HomePage() {
   });
 
   return (
-    <div className="content">
+    <div className="homepage">
       <div className="row">
         <div className="banner">
           <img src={LandingPic} alt="Landing Page Pic" />
