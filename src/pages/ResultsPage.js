@@ -100,11 +100,6 @@ useEffect(()=>{
     const response2 = await fetch("https://raw.githubusercontent.com/cederdorff/react-visit-denmark/master/public/data/placesToEat.json");
     const placesToEat = await response2.json();
     const combineddata = activites.concat(attractions, placesToEat);
-    //Log to easier find categories.
-   combineddata.forEach(doc =>{
-     let location = doc;
-     console.log(location.Category.Name);
-   })
  
     //Distance between Users Current Location and Place Location
     const filters = getFilters();
