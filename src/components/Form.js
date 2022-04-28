@@ -33,7 +33,7 @@ export default function Form(){
         event.preventDefault();
     const checked = document.querySelectorAll("input[type=checkbox]:checked").length
     if(!checked){
-       setErrormessage("You must pick one category");
+       setErrormessage("You must pick at least one activity");
 }   else{
         for (const item of event.target.elements) {
             if (item.checked) {

@@ -1,0 +1,15 @@
+.resultcard{
+.resultcardimage{
+    text-align: center;
+    position: relative;
+    z-index: -1;
+}
+h2{
+    position: absolute;
+}
+    img{
+        object-fit: cover;
+        width: 50%;
+        height: 50%;
+    }
+}

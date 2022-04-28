@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import './css/style.css';
 import HomePage from './pages/HomePage';
@@ -14,6 +14,7 @@ function App() {
        <Route path="/cities" element={<CityPage/>}/>
        <Route path="/filter" element={<FilterPage/>}/>
        <Route path="/results" element={<ResultsPage/>}/>
+       <Route path="*" element={<Navigate to="/"/>}/>
        </Routes>
     </div>
   );
