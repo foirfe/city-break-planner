@@ -7,7 +7,41 @@ export default function PlacePage(){
     const placeId = params.id;
     const [place, setPlace] = useState([]);
     useEffect(()=>{
+         //Get Users Current GeoLocation
+    async function getCurrentLocation() {
+        const location = await new Promise((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
+        return {
+          longitude: location.coords.longitude,
+          latitude: location.coords.latitude,
+        };
+      };
+      //Function to Calculate distance between two GeoCoordinates
+      function calcDistance(lat1, lon1, lat2, lon2, unit = "K") {
+        if ((lat1 === lat2) && (lon1 === lon2)) {
+          return 0;
+        }
+        else {
+          let radlat1 = Math.PI * lat1 / 180;
+          let radlat2 = Math.PI * lat2 / 180;
+          let theta = lon1 - lon2;
+          let radtheta = Math.PI * theta / 180;
+          let dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+          if (dist > 1) {
+            dist = 1;
+          }
+          dist = Math.acos(dist);
+          dist = dist * 180 / Math.PI;
+          dist = dist * 60 * 1.1515;
+          if (unit === "K") { dist = dist * 1.609344 }
+          if (unit === "N") { dist = dist * 0.8684 }
+          return dist;
+        }
+      };
+
         async function getPlace(){
+            let currentlocation = await getCurrentLocation();
              const response = await fetch("https://raw.githubusercontent.com/cederdorff/react-visit-denmark/master/public/data/activities.json");
     const activites = await response.json();
     const response1 = await fetch("https://raw.githubusercontent.com/cederdorff/react-visit-denmark/master/public/data/attractions.json");
@@ -16,19 +50,25 @@ export default function PlacePage(){
     const placesToEat = await response2.json();
     const combineddata = activites.concat(attractions, placesToEat);
     const filterplace = combineddata.filter(item=> placeId.includes(item.Id))
-    console.log(filterplace);
+    filterplace.forEach(doc => {
+        let location = doc;
+        location.distance = calcDistance(currentlocation.latitude, currentlocation.longitude, doc.Address.GeoCoordinate.Latitude, doc.Address.GeoCoordinate.Longitude)
+      })
     setPlace(filterplace);
         }
         getPlace();
     },[placeId])
     return(
-        <div className="placepage">
+        <div className="placepage" >
             {place.map(selectedplace=>(
-                <div className="header">
+                <div className="placecontent" key={selectedplace.Id}>
+                    <div className="header">
                     <img src={selectedplace.Files[0] ? selectedplace.Files[0].Uri : imagePlaceholder} alt={place.Name} />
                     <h1>{selectedplace.Name}</h1>
                     <p>{selectedplace.Address.AddressLine1}, {selectedplace.Address.City}</p>
-                    <p></p>
+                    </div>
+                    <p>{selectedplace.distance.toFixed(2)} km</p>
+                    <p>{selectedplace.Descriptions[0]?.Text}</p>
                 </div>
             ))}
         </div>
