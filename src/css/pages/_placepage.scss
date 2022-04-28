@@ -4,13 +4,41 @@
         width: 90%;
         margin: 0 auto;
         img{
+            position: absolute;
+            left: 0;
+            top: 0;
             width: 100%;
+            z-index: -1;
+        }
+        .header{
+            .headerinfo{display: flex;
+                justify-content: space-between;
+            }
+            .address{
+                writing-mode: vertical-rl;
+                transform: rotate(-180deg);
+                font-weight: bold;
+                text-shadow:2px 0px 8px black;
+                position: relative;
+                height: 20%;
+            }
+     
+        }
+        h1{
+            color:#F9C5CC;
+            width: 50%;
+            text-shadow: 0px -2px 7px black;
+            margin: 0 1% 0 2%;
+        }
+        .distance{
+            font-weight: bold;
+        }
+        .infotext{
+            width: 75%;
+            word-break: break-word;
+            margin-left: 2%;
         }
     }
-    header{
-        width: 100%;
-    }
-    h1{
-        color:#F9C5CC;
-    }
+  
+   
 }

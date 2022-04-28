@@ -306,15 +306,49 @@ p {
 }
 
 .placepage .placecontent img {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
+  z-index: -1;
 }
 
-.placepage header {
-  width: 100%;
+.placepage .placecontent .header .headerinfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.placepage h1 {
+.placepage .placecontent .header .address {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  font-weight: bold;
+  text-shadow: 2px 0px 8px black;
+  position: relative;
+  height: 20%;
+}
+
+.placepage .placecontent h1 {
   color: #F9C5CC;
+  width: 50%;
+  text-shadow: 0px -2px 7px black;
+  margin: 0 1% 0 2%;
+}
+
+.placepage .placecontent .distance {
+  font-weight: bold;
+}
+
+.placepage .placecontent .infotext {
+  width: 75%;
+  word-break: break-word;
+  margin-left: 2%;
 }
 
 .resultcard .resultcardimage {
