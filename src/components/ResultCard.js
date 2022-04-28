@@ -6,6 +6,7 @@ export default function ResultCard({place}){
 <h2>{place.Name}</h2>
 <img src={place.Files[0] ? place.Files[0].Uri : imagePlaceholder} alt={place.Name} />
 <p>{place.Category.Name}</p>
+<p>{place.distance.toFixed(2)}km</p>
         </div>
     )
 }

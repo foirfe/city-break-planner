@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap");
 
 * {
@@ -140,3 +141,62 @@
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+.filterpage {
+  background: #095979;
+}
+
+.filterpage h1 {
+  text-transform: uppercase;
+}
+
+.filterpage h1 .color {
+  color: #FDCB9C;
+}
+
+.filterpage form {
+  color: white;
+}
+
+.filterpage form .checkboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.filterpage form label {
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 50%;
+}
+
+.filterpage form input[type=checkbox] {
+  display: none;
+}
+
+.filterpage form input:checked + span {
+  color: #A5E9C0;
+}
+
+.filterpage form input:checked + span svg path {
+  stroke: #A5E9C0;
+  fill: #A5E9C0;
+}
+
+.filterpage form button {
+  padding: 2%;
+  margin: 0 auto;
+  border: none;
+  font-weight: bold;
+  background-color: #EA4242;
+  color: white;
+  text-transform: uppercase;
+}
+
