@@ -179,12 +179,79 @@ p {
   background: #095979;
 }
 
-.filterpage h1 {
-  text-transform: uppercase;
+.filterpage .row1,
+.filterpage .row2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: auto;
+  width: auto;
+}
+
+.filterpage .row-manager {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
+.filterpage .label-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 2%;
+  padding: 2%;
+}
+
+.filterpage .span-icon-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.filterpage .span-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-right: solid 1px white;
+  padding-right: 9%;
+}
+
+.filterpage .span-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1%;
+  margin-left: 8%;
 }
 
 .filterpage h1 .color {
-  color: #FDCB9C;
+  color: #fdcb9c;
 }
 
 .filterpage form {
@@ -195,30 +262,31 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 50%;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
 }
 
 .filterpage form label {
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 0.8em;
   width: 50%;
 }
 
-.filterpage form input[type=checkbox] {
+.filterpage form input[type="checkbox"] {
   display: none;
 }
 
-.filterpage form input:checked + span {
-  color: #A5E9C0;
+.filterpage form input:checked + div {
+  color: #a5e9c0;
 }
 
-.filterpage form input:checked + span svg path {
-  stroke: #A5E9C0;
-  fill: #A5E9C0;
+.filterpage form input:checked + div svg path {
+  stroke: #a5e9c0;
+  fill: #a5e9c0;
 }
 
 .filterpage form button {
@@ -226,7 +294,7 @@ p {
   margin: 0 auto;
   border: none;
   font-weight: bold;
-  background-color: #EA4242;
+  background-color: #ea4242;
   color: white;
   text-transform: uppercase;
 }

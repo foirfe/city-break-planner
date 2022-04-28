@@ -1,43 +1,85 @@
-.filterpage{
-    background: #095979;
-    h1{
-        .color{
-            color: #FDCB9C;
-        }
-        text-transform: uppercase;
-    }
-    form{
-        color: white;
-        .checkboxes{
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-        }
-        label{
-            text-transform: uppercase;
-            font-weight: bold;
-            width: 50%;
-            }
-            input[type=checkbox]{
-                display: none;
-            }
-            input:checked + span{
-                color: #A5E9C0;
-                svg path{
-                    stroke: #A5E9C0;
-                    fill: #A5E9C0;
-                }
-            }
-          
-            button{
-                padding: 2%;
-                margin: 0 auto;
-                border: none;
-                font-weight: bold;
-                background-color: #EA4242;
-                color: white;
-                text-transform: uppercase;
-            }
-        }
-        
-    }
+.filterpage {
+   .row1,
+   .row2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: auto;
+      width: auto;
+   }
+
+   .row-manager {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+   }
+
+   .label-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 2%;
+      padding: 2%;
+   }
+
+   .span-icon-box {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+   }
+
+   .span-icon {
+      display: flex;
+      border-right: solid 1px white;
+      padding-right: 9%;
+   }
+
+   .span-text {
+      display: flex;
+      align-items: center;
+      padding: 1%;
+      margin-left: 8%;
+   }
+
+   background: #095979;
+   h1 {
+      .color {
+         color: #fdcb9c;
+      }
+   }
+   form {
+      color: white;
+      .checkboxes {
+         display: flex;
+         flex-direction: row;
+         width: 100%;
+      }
+      label {
+         text-transform: uppercase;
+         font-weight: bold;
+         font-size: 0.8em;
+         width: 50%;
+      }
+      input[type="checkbox"] {
+         display: none;
+      }
+      input:checked + div {
+         color: #a5e9c0;
+         svg path {
+            stroke: #a5e9c0;
+            fill: #a5e9c0;
+         }
+      }
+
+      button {
+         padding: 2%;
+         margin: 0 auto;
+         border: none;
+         font-weight: bold;
+         background-color: #ea4242;
+         color: white;
+         text-transform: uppercase;
+      }
+   }
+}
