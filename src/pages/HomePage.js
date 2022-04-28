@@ -47,8 +47,7 @@ export default function HomePage() {
             </div>
             <div className="btn">
               <NavLink to="/byer">
-                <button type="button">Explore Now</button>
-                
+                <button type="button">Explore Nu</button>
               </NavLink>
             </div>
             <div className="logoo">
