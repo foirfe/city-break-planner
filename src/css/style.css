@@ -1,18 +1,148 @@
-html {
-  background: #095979;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap");
+
+* {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
+.banner {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #095979;
+  display: flex;
+  justify-content: center;
+}
+
+.home {
+  height: 95vh;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 20px;
+  width: 90%;
+}
+
+.banner img {
+  max-width: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.banner h1 {
+  text-align: left;
+  font-family: "Montserrat";
+  font-size: 45px;
+  margin: 20px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.banner h1 span {
+  color: #fee789;
+}
+
+.btn {
+  margin: 20px;
+  margin-top: 50px;
+}
+.btn button {
+  font-family: "Montserrat";
+  padding: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  background-color: #ea4242;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.logoo {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+
+  text-align: right;
+}
+
+.logoo img {
+  width: 50%;
+}
+
+.citypage {
+  border: 1px solid #fff;
+  width: 90%;
+  height: 97vh;
+  margin: 0 auto;
+  margin-top: 12px;
+  background-color: #095979;
+}
+.citypage h1 {
+  text-align: left;
+  font-family: "Montserrat";
+  font-size: 45px;
+  margin: 20px;
   color: white;
+  text-transform: uppercase;
 }
 
-h2 {
+.places {
+  width: 95%;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.places img {
+  width: 100%;
+}
+
+.places h2 {
+  position: absolute;
+  top: 10px;
+  left: 15px;
   color: white;
+  font-family: "Montserrat";
+  font-size: 30px;
+  text-transform: uppercase;
 }
 
-.homepage h1 {
-  text-align: center;
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #095979;
 }
+
+.findplace {
+  text-align: left;
+  font-family: "Montserrat";
+  margin: 20px;
+}
+
+.findplace p {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 10px;
+  text-decoration: underline;
+}
+
+.svg-logo {
+  text-align: right;
+
+  margin-top: 50px;
+}
+
+.svg-logo img {
+  color: white;
+  width: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+
 
 .filterpage {
   background: #095979;
@@ -69,4 +199,4 @@ h2 {
   color: white;
   text-transform: uppercase;
 }
-/*# sourceMappingURL=style.css.map */
+
