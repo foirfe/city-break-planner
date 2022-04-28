@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import imagePlaceholder from "../images/img-placeholder.jpg";
 
 export default function PlacePage(){
     const params = useParams();
@@ -23,8 +24,11 @@ export default function PlacePage(){
     return(
         <div className="placepage">
             {place.map(selectedplace=>(
-                <div>
+                <div className="header">
+                    <img src={selectedplace.Files[0] ? selectedplace.Files[0].Uri : imagePlaceholder} alt={place.Name} />
                     <h1>{selectedplace.Name}</h1>
+                    <p>{selectedplace.Address.AddressLine1}, {selectedplace.Address.City}</p>
+                    <p></p>
                 </div>
             ))}
         </div>
