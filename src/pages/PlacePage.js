@@ -6,8 +6,8 @@ export default function PlacePage(){
     const params = useParams();
     const placeId = params.id;
     const [place, setPlace] = useState([]);
-    useEffect(()=>{
-         //Get Users Current GeoLocation
+
+    useEffect(()=>{         //Get Users Current GeoLocation
     async function getCurrentLocation() {
         const location = await new Promise((resolve, reject) => {
           navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -58,17 +58,20 @@ export default function PlacePage(){
         }
         getPlace();
     },[placeId])
+    
     return(
         <div className="placepage" >
             {place.map(selectedplace=>(
                 <div className="placecontent" key={selectedplace.Id}>
                     <div className="header">
-                    <img src={selectedplace.Files[0] ? selectedplace.Files[0].Uri : imagePlaceholder} alt={place.Name} />
+                    <img className="headerimg" src={selectedplace.Files[0] ? selectedplace.Files[0].Uri : imagePlaceholder} alt={place.Name} />
+                    <div className="headerinfo">
                     <h1>{selectedplace.Name}</h1>
-                    <p>{selectedplace.Address.AddressLine1}, {selectedplace.Address.City}</p>
+                    <p className="address">{selectedplace.Address.AddressLine1}, {selectedplace.Address.City}</p>
                     </div>
-                    <p>{selectedplace.distance.toFixed(2)} km</p>
-                    <p>{selectedplace.Descriptions[0]?.Text}</p>
+                    </div>
+                    <p className="distance">{selectedplace.distance.toFixed(2)} km</p>
+                    <p className="infotext">{selectedplace.Descriptions[0]?.Text}</p>
                 </div>
             ))}
         </div>
