@@ -1,4 +1,11 @@
 .filterpage {
+   border: 1px solid #fff;
+   width: 90%;
+   height: 96vh;
+   margin: 0 auto;
+   margin-top: 12px;
+   background-color: #095979;
+
    .row1,
    .row2 {
       display: flex;
@@ -13,6 +20,7 @@
       flex-direction: row;
       width: 100%;
       height: auto;
+      padding-right: 5%;
    }
 
    .label-box {
@@ -44,16 +52,28 @@
 
    background: #095979;
    h1 {
+      text-align: left;
+      font-family: "Montserrat";
+      font-size: 40px;
+      margin: 20px;
+      color: white;
+      text-transform: uppercase;
       .color {
          color: #fdcb9c;
       }
    }
+
+   h2 {
+      margin: 20px;
+   }
+
    form {
       color: white;
       .checkboxes {
          display: flex;
          flex-direction: row;
          width: 100%;
+         margin-bottom: 2em;
       }
       label {
          text-transform: uppercase;
@@ -74,12 +94,19 @@
 
       button {
          padding: 2%;
-         margin: 0 auto;
+         margin: 0em 0em 0em 2em;
          border: none;
          font-weight: bold;
          background-color: #ea4242;
          color: white;
          text-transform: uppercase;
       }
+   }
+   .logo {
+      color: white;
+      width: 45%;
+      position: absolute;
+      right: 19px;
+      bottom: 14px;
    }
 }
