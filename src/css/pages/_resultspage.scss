@@ -1,0 +1,30 @@
+.resultspage{
+  button{
+    padding: 2%;
+    margin: 0em 0em 0em 2em;
+    border: none;
+    font-weight: bold;
+    background-color: #ea4242;
+    color: white;
+    text-transform: uppercase;
+  }
+}
+.resultspage h1 {
+    margin-left: 20px;
+    text-transform: uppercase;
+  }
+  
+  .resultspage p {
+    margin-left: 20px;
+  }
+
+  .back{
+      display: inline;
+      color: white;
+      margin-left: 2%;
+  }
+  
+  .back span {
+    text-transform: none;
+    margin: 1%;
+  }

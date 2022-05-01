@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import imagePlaceholder from "../images/img-placeholder.jpg";
+import Logo from "../images/visitdanmarklogo.png";
 
 export default function PlacePage(){
     const params = useParams();
     const placeId = params.id;
     const [place, setPlace] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(()=>{         //Get Users Current GeoLocation
     async function getCurrentLocation() {
@@ -58,13 +60,18 @@ export default function PlacePage(){
         }
         getPlace();
     },[placeId])
-    
+    function handleBack(){
+      navigate("/results")
+    }
     return(
         <div className="placepage" >
             {place.map(selectedplace=>(
                 <div className="placecontent" key={selectedplace.Id}>
                     <div className="header">
                     <img className="headerimg" src={selectedplace.Files[0] ? selectedplace.Files[0].Uri : imagePlaceholder} alt={place.Name} />
+                    <div onClick={handleBack} className="back">
+      &#11164; <span>Back</span> 
+      </div>
                     <div className="headerinfo">
                     <h1>{selectedplace.Name}</h1>
                     <p className="address">{selectedplace.Address.AddressLine1}, {selectedplace.Address.City}</p>
@@ -72,8 +79,10 @@ export default function PlacePage(){
                     </div>
                     <p className="distance">{selectedplace.distance.toFixed(2)} km</p>
                     <p className="infotext">{selectedplace.Descriptions[0]?.Text}</p>
+                    <img className="logo" src={Logo} alt="Logo"/>
                 </div>
             ))}
+          
         </div>
     )
 }
